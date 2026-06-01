@@ -113,17 +113,6 @@ process_dataset() {
         exit 1
     fi
 
-    echo "Step 3: Refine triples"
-    if [ "$dset" == "mine" ]; then
-        python3 "$SCRIPT_DIR/run.py" "$mdl_nm" "$dset" "$INPUT_DIR" "$OUTPUT_DIR"
-    else
-        python3 "$SCRIPT_DIR/run.py" "$mdl_nm" "$dset2" "$articles_path" "$OUTPUT_DIR"
-    fi
-    if [ $? -ne 0 ]; then
-        echo "Error: verifier failed"
-        exit 1
-    fi
-
     if [ "$dset" == "mine" ]; then
         echo "Step 4: Merge triples"
         python3 "$SCRIPT_DIR/utils/merge_triples.py" "$INPUT_DIR" "$OUTPUT_DIR" "$dset"
