@@ -1,7 +1,7 @@
 
 # Construction Pipeline
 
-This pipeline processes knowledge graph triple extraction and verification/refinement from articles.
+This pipeline processes knowledge graph triple extraction from articles.
 
 ```
 
@@ -10,8 +10,8 @@ This pipeline processes knowledge graph triple extraction and verification/refin
 First, create and activate the conda environment in the KGC root directory:
 
 ```bash
-conda create -n unikg python=3.10.12
-conda activate unikg
+conda create -n lessmorekg python=3.10.12
+conda activate lessmorekg
 ```
 
 Then, install all required packages from the root directory:
@@ -80,14 +80,12 @@ bash run.sh gpt mine /path/to/wikiqa/articles
 ## Model Support
 
 - **Extraction**: Uses `extractor.py` for both vLLM models (e.g., qwen, mistral) and OpenAI models (e.g., gpt, gpt-5.1)
-- **Verification/refinement**: Uses `run.py` with the same model family as extraction. GPT extraction uses GPT for refinement; vLLM extraction uses the vLLM refiner.
 
 ## Pipeline Steps
 
 1. **Split Articles**: If articles exceed 2048 characters, split them at sentence boundaries
 2. **Extract Triples**: Extract knowledge graph triples from articles using specified model
-3. **Verify/Refine Triples**: Verify/refine extracted triples using the same model family as extraction (GPT or vLLM)
-4. **Merge Triples**: Merge split triples back to original article count (with deduplication)
+3. **Merge Triples**: Merge split triples back to original article count (with deduplication)
 
 ## Dataset Names
 
@@ -104,7 +102,6 @@ bash run.sh gpt mine /path/to/wikiqa/articles
 - Articles longer than 2048 characters are automatically split at sentence boundaries
 - Split articles are merged back after processing to maintain original article count
 - All paths are passed as arguments - no hardcoded paths in Python files
-- Refinement step uses the same model family as the extraction step (auto-detected from model name)
 
 
 ## Common Modules
@@ -112,6 +109,5 @@ bash run.sh gpt mine /path/to/wikiqa/articles
 The codebase keeps the pipeline modules minimal:
 
 - `extractor.py`: prompt loading + extraction + postprocessing
-- `verifier.py`: prompt loading + refinement/extraction helpers
 - `utils/split.py`: article splitting
 - `utils/merge_triples.py`: triple merging with deduplication
