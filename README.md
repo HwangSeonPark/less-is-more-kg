@@ -18,8 +18,8 @@ From the project root (`/home/less-is-more-kg`):
 
 ```bash
 # (Recommended) create env
-conda create -n unikg python=3.10.12
-conda activate unikg
+conda create -n lessmorekg python=3.10.12
+conda activate lessmorekg
 
 # install dependencies
 pip install -r requirements.txt
