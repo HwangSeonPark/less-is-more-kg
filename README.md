@@ -1,6 +1,6 @@
-# UniKG: A Unified Framework for Knowledge Graph Construction and Canonicalization with Large Language Models
+# Less Is More: Knowledge Graph Construction and Schema-Guided Canonicalization with LLMs
 
-Official implementation of **"UniKG: A Unified Framework for Knowledge Graph Construction and Canonicalization with Large Language Models"**.
+Official implementation of **"Less Is More: Knowledge Graph Construction and Schema-Guided Canonicalization with LLMs"**.
 
 ## Paper Figure (Overview)
 
@@ -10,11 +10,11 @@ Add the main figure image at:
 
 Then it will render here:
 
-![UniKG overview](assets/unikg_overview.png)
+![UniKG overview](assets/less_is_more_kg_overview.pdf)
 
 ## Quick Start
 
-From the project root (`/home/UniKG`):
+From the project root (`/home/less-is-more-kg`):
 
 ```bash
 # (Recommended) create env
@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 After installing requirements, run each pipeline by reading the README in its folder:
 
-- **Construction (extract + refine triples)**: see `construction/README.md`
+- **Construction (extract)**: see `construction/README.md`
 - **Canonicalization (normalize triples)**: see `canonicalization/README.md`
 - **Evaluation (Metrix)**: see `evaluate/README.md`
 
@@ -35,7 +35,7 @@ After installing requirements, run each pipeline by reading the README in its fo
 
 ### Construction
 
-- **What it does**: Extract triples from articles and refine/verify them.
+- **What it does**: Extract triples from articles them.
 - **How to run**: follow `construction/README.md`
 
 ### Canonicalization
