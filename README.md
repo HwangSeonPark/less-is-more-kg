@@ -6,11 +6,11 @@ Official implementation of **"Less Is More: Knowledge Graph Construction and Sch
 
 Add the main figure image at:
 
-- `assets/unikg_overview.png`
+- `assets/less_is_more_kg_overview.pdf`
 
 Then it will render here:
 
-![UniKG overview](assets/less_is_more_kg_overview.pdf)
+![Our framework overview](assets/less_is_more_kg_overview.pdf)
 
 ## Quick Start
 
